@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="rootApp">
+	<head>
+		<title>Make My Event</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- mobile first -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		
+	</head>
+	<body>
+		<div class="container" ng-controller="rootController">
+			<div class="nav-bar">
+			Make My Event
+			</div>
+			<div class="side-menu">
+			<div ng-repeat="card in cards">
+				<span class="side-button" ng-click="search($event, card)" ng-class="{ active: isSelected(card) }">{{ card }}</span>
+			</div>
+			</div>
+					
+			<!--  Planning Board file include -->
+			<div ng-show="showBoard" ng-include="boardHTML">
+			
+			</div>
+			
+			<!--  Search Results file include -->
+			<div ng-show="showResults" ng-include="resultsHTML"></div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+		<!-- the version numbers for angular and angular-animate should match  -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-animate.js"></script> 
+		<script src="js/scripts.js"></script>
+	</body>
+</html>

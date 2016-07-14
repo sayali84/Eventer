@@ -1,0 +1,17 @@
+<div class="resultsBoard">
+	<div class="title">Yelp Search Results</div>
+	<br><br>
+	<div>
+		<table class="resultTable">
+			<tr  ng-repeat="item in resultSet | limitTo:10" dragit>
+				<td width="20%">
+					<div> <img class="ImageMed" ng-src="{{ item.image_url }}"/></div>
+					<span><a href="{{ item.url }}">{{ item.name }}</a></span>
+				</td>
+				<td width="20%"> <img class="imageLarge" ng-src="{{ item.rating_img_url }}"/></td>
+				<td>{{ item.location.display_address.join(', ')  }}</td>
+				<td width="25%">{{ item.display_phone }}</td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="planboard" ng-class="animeClass">
+	<div class="title">Planning Board</div>
+		<br>
+		<div ng-repeat="card in cards" class="card" >			
+			<div class="heading">
+				{{ card }}
+			</div>
+			<div id="{{ card }}" class="content" dropit></div>	
+		</div>
+		</div>
+</div>
+
+				
