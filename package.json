@@ -1,0 +1,22 @@
+{
+  "name": "Eventer",
+  "version": "0.0.1",
+  "description": "Event planning made easy",
+  "engines": {
+    "npm": "2.15.5",
+    "node": "4.4.5"
+  },
+  "main": "index.ejs",
+  "scripts": {
+    "start": "node server_yelp_api.js"
+  },
+  "dependencies": {
+    "ejs": "2.4.2",
+    "express": "4.14.0",
+    "yelp": "1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sayali84/Eventer"
+  }
+}

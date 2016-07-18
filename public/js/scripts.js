@@ -4,8 +4,8 @@ var app = angular.module('rootApp',['ngAnimate'])
 	   $scope.cards = ['Cake','Decorations','Invitations','Catering','Games', 'Return Gifts'];	
 	   $scope.showResults = false;
 	   $scope.showBoard = true;
-	   $scope.boardHTML = "planning_board.html";
-	   $scope.resultsHTML = "search_results.html"; 
+	   $scope.boardHTML = "partials/planning_board.html";
+	   $scope.resultsHTML = "partials/search_results.html"; 
 	   $scope.resultSet = {};
 	   
 	   // change the css of button when clicked  
@@ -28,8 +28,6 @@ var app = angular.module('rootApp',['ngAnimate'])
 		   .error(function(data, status, headers, config){
 			  $scope.status = status; 
 		   });
-		   
-		   
 	   };
     }])
 	 .directive('dragit', function($document, $window) {
