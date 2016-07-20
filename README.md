@@ -11,3 +11,4 @@ AngularJS, node.js
 
 
 # Demo
+Plunker : https://plnkr.co/edit/0kxXfQvDdENpfKeCpk4i?p=preview
