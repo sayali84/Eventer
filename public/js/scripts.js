@@ -7,6 +7,17 @@ var app = angular.module('rootApp',['ngAnimate'])
 	   $scope.boardHTML = "partials/planning_board.html";
 	   $scope.resultsHTML = "partials/search_results.html"; 
 	   $scope.resultSet = {};
+	   $scope.maxAllowed = 5; 
+	   $scope.resetLimits = function(){
+		   $scope.limits = {'Cake':0,
+		   			'Decorations':0,
+		   			'Invitations':0,
+		   			'Catering':0,
+		   			'Games':0,
+		   			'Return Gifts':0};
+	   }
+	   
+	   $scope.resetLimits();
 	   
 	   // change the css of button when clicked  
 	   $scope.isSelected = function(type){ 
@@ -69,11 +80,20 @@ var app = angular.module('rootApp',['ngAnimate'])
 	         event.preventDefault();
 	         element.removeClass('dropItem');
 	         scope.$apply(function(){
-	        	 if(scope.$parent.selected_type == element.parent().children(".heading").html().trim())
+	        	 // check for items limit
+	        	 var selected = scope.$parent.selected_type;
+     		 	 var curr = scope.limits[selected];
+     		 	 if(curr == scope.maxAllowed){
+     		 		 $window.alert('Max limit reached, consider removing some.');
+     		 	 }
+	        	 // check if right item is being dropped, reject if wrong container.
+     		 	 else if(selected == element.parent().children(".heading").html().trim())
 	        		 {
+	        		 	
 	        		 	element.append('<li>' + 
 	        		 			event.originalEvent.dataTransfer.getData('Text')  + '</li>');
 	        		 	$('.dragItem').hide("slow");
+	        		 	scope.limits[selected] += 1;
 	        		 	
 	        		 }
 	        	 else{

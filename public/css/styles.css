@@ -120,7 +120,7 @@ td img{
 }
 .card{
 	display:inline-block;
-	width:200px;
+	/*width:200px*/;
 	/*background-color:#f9d879;*/
 	background-color: #ffd; 
 	background-image: 
@@ -129,6 +129,12 @@ td img{
 	margin:10px;
 	border-radius:10px;
 	color:#808080;
+}
+
+.card a{
+	text-decoration:none;
+	font-weight:bold;
+	color:#2337fb;
 }
 
 .heading{
@@ -146,9 +152,9 @@ td img{
 	height:auto;
 	text-align:left;
 	padding-top:10px;
-	padding-left:10px;
-	padding-right:10px;
-	padding-bottom:10px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:5px;
 	margin-left:15px;
 	margin-right:1px;
 	margin-top:0px;
